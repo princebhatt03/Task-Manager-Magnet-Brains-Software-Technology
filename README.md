@@ -1,5 +1,5 @@
 # Task Manager Web Application
-This project has been developed as part of a **job interview task at Jai Japnaam Technology**. It demonstrates the ability to build a full-stack web application using the MERN stack, including features such as user authentication, task management with CRUD operations, priority-based task categorization, and a responsive, animated frontend design. The application showcases practical skills in React, Node.js, Express, MongoDB, Tailwind CSS, and modern development workflows.
+This project has been developed as part of a **job interview task at Magnet Brains Software Technology**. It demonstrates the ability to build a full-stack web application using the MERN stack, including features such as user authentication, task management with CRUD operations, priority-based task categorization, and a responsive, animated frontend design. The application showcases practical skills in React, Node.js, Express, MongoDB, Tailwind CSS, and modern development workflows.
 A full-stack **Task Management Web Application** built with **MERN stack** (MongoDB, Express.js, React, Node.js). This project allows users to **create, update, delete, and manage tasks** with priorities, due dates, and status tracking.  
 
 ---
@@ -134,10 +134,6 @@ task-manager/
 
 2️⃣
 <img width="1349" height="637" alt="s2" src="https://github.com/user-attachments/assets/28cb570e-8d34-4f33-9ef2-939748f7813b" />
-
-### Screen Recording
-
-https://github.com/user-attachments/assets/6ebdb530-c462-490d-bfc8-314d5c42b899
 
 ### 🧑‍💻 Developer
 
