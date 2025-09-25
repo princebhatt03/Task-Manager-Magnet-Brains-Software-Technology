@@ -24,9 +24,9 @@ const Home = () => {
           <p className="text-gray-700 text-lg md:text-xl">
             Welcome to{' '}
             <span className="font-semibold text-indigo-500">Task Manager</span>!
-            This is a Job Interview Task project for JAI JAPNAAM TECHNOLOGIES
-            built using MERN stack. It allows users to create, manage, and track
-            tasks with priorities and due dates.
+            This is a Job Interview Task project for Magnet Brains Software
+            Technology built using MERN stack. It allows users to create,
+            manage, and track tasks with priorities and due dates.
           </p>
 
           {/* Buttons */}
