@@ -13,7 +13,6 @@ router.post('/register', async (req, res) => {
   try {
     const { name = '', email = '', password = '' } = req.body || {};
 
-    // ✅ Basic Validation
     if (!name || name.trim().length < 2) {
       return res.status(400).json({
         message: 'Name must be at least 2 characters',
@@ -36,7 +35,6 @@ router.post('/register', async (req, res) => {
       });
     }
 
-    // ✅ Check uniqueness
     const existing = await User.findOne({
       email: email.toLowerCase().trim(),
     }).lean();
@@ -47,24 +45,22 @@ router.post('/register', async (req, res) => {
       });
     }
 
-    // ✅ Hash Password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // ✅ Create User
+    // Create User
     const user = await User.create({
       name: name.trim(),
       email: email.toLowerCase().trim(),
-      password: hashedPassword, // store hash in "password"
+      password: hashedPassword,
     });
 
-    // ✅ Create JWT
+    // Create JWT
     const token = jwt.sign(
       { id: user._id },
       process.env.JWT_SECRET || 'default_secret',
       { expiresIn: '2d' }
     );
 
-    // ✅ Public Response (exclude password)
     const publicUser = {
       id: user._id,
       name: user.name,
@@ -101,7 +97,7 @@ router.post('/login', async (req, res) => {
       });
     }
 
-    // ✅ Find user
+    // Find user
     const user = await User.findOne({
       email: email.toLowerCase().trim(),
     });
@@ -111,7 +107,7 @@ router.post('/login', async (req, res) => {
       });
     }
 
-    // ✅ Compare password
+    // Compare password
     const ok = await bcrypt.compare(password, user.password);
     if (!ok) {
       return res.status(401).json({
@@ -119,14 +115,14 @@ router.post('/login', async (req, res) => {
       });
     }
 
-    // ✅ Sign JWT
+    // Sign JWT
     const token = jwt.sign(
       { id: user._id },
       process.env.JWT_SECRET || 'default_secret',
       { expiresIn: '2d' }
     );
 
-    // ✅ Response
+    // Response
     return res.status(200).json({
       message: 'Login successful',
       token,

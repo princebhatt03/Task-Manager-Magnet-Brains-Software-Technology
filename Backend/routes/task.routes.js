@@ -4,7 +4,6 @@ const auth = require('../middleware/auth');
 
 const router = express.Router();
 
-// All routes below require auth
 router.use(auth);
 
 /**
@@ -65,7 +64,7 @@ router.post('/', async (req, res) => {
 
 /**
  * GET /tasks
- * query: status, priority, q, dueFrom, dueTo, page=1, limit=10, sort (e.g. -createdAt, dueDate)
+ * query: status, priority
  */
 router.get('/', async (req, res) => {
   try {
@@ -128,7 +127,6 @@ router.get('/', async (req, res) => {
         }
         filter.dueDate.$lte = dTo;
       }
-      // remove empty object if no valid dates
       if (Object.keys(filter.dueDate).length === 0) delete filter.dueDate;
     }
 
@@ -185,7 +183,6 @@ router.get('/:id', async (req, res) => {
 
 /**
  * PATCH /tasks/:id
- * body: partial fields { title?, description?, dueDate?, priority?, status? }
  */
 router.patch('/:id', async (req, res) => {
   try {
