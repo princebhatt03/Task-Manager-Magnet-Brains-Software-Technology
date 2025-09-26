@@ -6,7 +6,7 @@ A full-stack **Task Management Web Application** built with **MERN stack** (Mong
 
 ## 🌐 Live Demo
 
-[View Live on Netlify](https://task-manager-job-task.netlify.app)
+[View Live on Netlify](https://task-manager-job-app.netlify.app)
 
 ---
 
